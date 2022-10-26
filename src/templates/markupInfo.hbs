@@ -1,0 +1,12 @@
+{{#each this}}
+<ul class="country-info__list">
+<li class="country-info__item">
+    <img src="{{flags.svg}}" alt="{{name.official}}" width="60" height="40"></img>
+    <h2>{{name.official}}</h2>
+    </li>
+        <li class="country-info__item"><span>capital: </span>{{capital}}</li>
+        <li class="country-info__item"><span>population: </span>{{population}}</li>
+        <li class="country-info__item"><span>languages: </span>{{#each languages}} {{this}}{{#unless @last}}, {{/unless}} {{/each}}</li>
+        {{!-- мов буває більше 1 в масиві, тому додатково пербираєм у шаблонізатору--}}
+    </ul>
+{{/each}}
