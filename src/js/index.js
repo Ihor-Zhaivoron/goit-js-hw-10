@@ -19,20 +19,21 @@ function onInput(e) {
   if (!countryName) {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
+    git;
     return;
   }
 
   fetchCountries(countryName)
     .then(countries => {
       if (countries.length > 10) {
+        countryList.innerHTML = '';
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
-      } else if ((countries.length > 2) & (countries.length < 10)) {
+      } else if (countries.length > 2 && countries.length < 10) {
         countryInfo.innerHTML = '';
         renderListCountry(countries);
       } else {
-        countryList.innerHTML = '';
         renderInfoCoutry(countries);
       }
     })
